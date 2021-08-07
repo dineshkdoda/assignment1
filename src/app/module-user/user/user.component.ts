@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostComment, User, UserPost } from '../../shared/models/user.model';
-import { UserService } from 'src/app/shared/services/user.service';
+import { UserService } from '../../shared/services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { MatCard } from '@angular/material/card';
 
