@@ -43,26 +43,21 @@ export class UserComponent implements OnInit {
     this.userService.getUserById(userId)
     .subscribe(userDetails => {
       this.userDetails = userDetails;
-      console.log("-----UserDetails---", this.userDetails);
     })
   }
 
   getPosts(loadAll: boolean = false): void {
-    console.log(this.user$);
     this.comments  = [];
     this.userService.getUserPosts()
     .subscribe(userposts => {
       let posts = userposts.filter((post: UserPost) => post.userId == this.user$);
       posts.forEach(data => {
-        console.log("data----", data.id);
         this.showLoadAll = !loadAll? true: false;
         this.userService.getPostComments(data.id)
     .subscribe(comments => data.commentData = comments);
         
       })
       this.userPosts = loadAll ? posts: posts.slice(0,3);
-
-      console.log("data----", this.userPosts);
     }
     );
   }

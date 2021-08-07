@@ -9,14 +9,14 @@ export class SplitNamePipe implements PipeTransform {
     if(!value)return null;
     let initials = ['Mr', 'Mrs.', 'Mr.', 'Mrs', 'Miss', 'Miss.'];
     let firstName = value.split(" ", 3);
-    if(firstName){
+    if(firstName && firstName.length > 1){
       if(initials.includes(firstName[0])){
         value = firstName[1];
       }else{
         value = firstName[0];
       }
-      return value;
     }
+    return value;
   }
 
 }
