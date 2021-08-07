@@ -1,0 +1,83 @@
+section {
+    display: table;
+  }
+
+  
+.user-row {
+    display: table-cell;
+    width: 90%;
+    & .mat-button-base {
+        margin: 8px 8px 8px 0;
+    }
+    & button{
+        background-color: #5B9BD5;
+    }
+    & button.activated{
+        background-color: orange;
+    }
+  }
+
+
+.posts-row{
+    & .post-title{
+        text-align: center;
+        font-weight: bold;
+        padding-bottom: 5px;
+    }
+    & .post-body{
+        margin:5px;
+    }
+    & .post-row{
+        float:left;
+        width:78%;
+        background-color: #5B9BD5;
+        color:#fff;
+        padding:5px; 
+        margin:5px 5px 15px;
+        border-radius: 5px;
+    }
+    & .comment-row{
+        width:15%;
+        float:right;
+        padding-top:15px;
+        & button{
+            background-color: #5B9BD5;
+            font-size:20px;
+            vertical-align: text-top;
+        }
+        & .mat-icon{
+            height:30px;
+        }
+    }
+    & .comment-row-data{
+        width: 100%;
+        float:left;
+    }
+    & .comment-detail{
+        border-bottom:1px solid #ccc; 
+        padding: 10px 0px;
+        line-height: 1.4em;
+    }
+
+    & .comment-detail:last-of-type {
+        border:none;
+    }
+
+    & .comment-box{
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        float:left;
+        width:75%;
+        padding:10px;
+        margin: 10px;
+    }
+
+    & .load-more{
+        width:80%;
+        float:left;
+        margin:10px;
+        padding:5px;
+        background-color: #5B9BD5;
+    }
+}
+

@@ -1,0 +1,72 @@
+<div class="content" role="main">
+    <!-- Next Steps -->
+    <!-- <ul class="heroes">
+    <li *ngFor="let user of users">
+      {{user.name}}
+    </li>
+  </ul> -->
+    
+  <section>  
+    <div class="user-row">
+      <button mat-raised-button color="primary" *ngFor="let user of users" routerLink="/user/{{ user.id }}" routerLinkActive="activated">
+        <span class="fullname">{{user.name | splitName}}</span>
+      </button>
+    </div>
+  </section>
+  <section class="posts-row">
+    <h2 *ngIf="userDetails">Posts from {{ userDetails.name}}:</h2>
+    <cdk-accordion >
+      <cdk-accordion-item
+        *ngFor="let post of userPosts; let index = index;"
+        #accordionItem="cdkAccordionItem"
+        role="button"
+        tabindex="0"
+        [attr.id]="'accordion-header-' + index"
+        [attr.aria-expanded]="accordionItem.expanded"
+        [attr.aria-controls]="'accordion-body-' + index">
+        <div (click)="accordionItem.toggle()" >
+          <div  class="post-row">
+            <div class="post-title">{{post.title}} </div>
+            <div class="post-body">{{post.body}}</div>
+          </div>
+          <span >
+            <div class="comment-row" ><button mat-fab color="primary" aria-label="Show hide comments">
+              <mat-icon>{{ accordionItem.expanded ? '-' : '+' }}</mat-icon>
+            </button></div>
+           
+          </span>
+        </div>
+        <div
+          role="region"
+          [style.display]="accordionItem.expanded ? '' : 'none'"
+          [attr.id]="'accordion-body-' + index"
+          [attr.aria-labelledby]="'accordion-header-' + index" class="comment-box">
+          <div class="comment-row-data comment-detail" *ngFor="let comment of post.commentData" >
+            <div><strong>From:</strong> {{comment.email}}</div>
+            <div><strong>Title:</strong> {{comment.name}}</div>
+            <div>{{comment.body}}</div> 
+          </div>
+        </div>
+      </cdk-accordion-item>
+    </cdk-accordion>
+
+    <button mat-raised-button color="primary" class="load-more" (click)="getPosts(true)" *ngIf="showLoadAll">
+      <span >Load More</span>
+    </button>
+    <!-- <div *ngIf="userPosts">
+      <div *ngFor="let post of userPosts" >
+        <div  class="post-row">
+          <div class="post-title">{{post.title}} </div>
+          <div>{{post.body}}</div>
+        </div>
+        <div class="comment-row" ><button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+          <mat-icon>+</mat-icon>
+        </button></div>
+        <div *ngFor="let comment of post.commentData" >{{comment.name}}</div>
+      </div>
+      
+      <div class="load-more" (click)="getPosts(true)">Load More</div>
+      
+  </div>  -->
+  </section>
+       
