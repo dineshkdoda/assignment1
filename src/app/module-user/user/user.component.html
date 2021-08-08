@@ -1,11 +1,4 @@
 <div class="content" role="main">
-    <!-- Next Steps -->
-    <!-- <ul class="heroes">
-    <li *ngFor="let user of users">
-      {{user.name}}
-    </li>
-  </ul> -->
-    
   <section>  
     <div class="user-row">
       <button mat-raised-button color="primary" *ngFor="let user of users" routerLink="/user/{{ user.id }}" routerLinkActive="activated">
@@ -53,20 +46,4 @@
     <button mat-raised-button color="primary" class="load-more" (click)="getPosts(true)" *ngIf="showLoadAll">
       <span >Load More</span>
     </button>
-    <!-- <div *ngIf="userPosts">
-      <div *ngFor="let post of userPosts" >
-        <div  class="post-row">
-          <div class="post-title">{{post.title}} </div>
-          <div>{{post.body}}</div>
-        </div>
-        <div class="comment-row" ><button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-          <mat-icon>+</mat-icon>
-        </button></div>
-        <div *ngFor="let comment of post.commentData" >{{comment.name}}</div>
-      </div>
-      
-      <div class="load-more" (click)="getPosts(true)">Load More</div>
-      
-  </div>  -->
   </section>
-       

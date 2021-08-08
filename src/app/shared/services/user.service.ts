@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { User, UserPost, PostComment } from '../models/user.model';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { catchError, delay, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

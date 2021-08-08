@@ -6,6 +6,7 @@ import { SplitNamePipe } from '../shared/filters/split-name.pipe';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {CdkAccordionModule} from '@angular/cdk/accordion';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {CdkAccordionModule} from '@angular/cdk/accordion';
     RouterModule,
     MatButtonModule,
     MatIconModule,
-    CdkAccordionModule
+    CdkAccordionModule,
+    HttpClientModule
   ]
 })
 export class UserModule { }
